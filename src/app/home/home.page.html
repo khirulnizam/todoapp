@@ -1,14 +1,59 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header">
     <ion-title>
-      Ionic Blank
+      Kerul Todo-app
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div class="body">
+    
+    
   </div>
+  <ion-grid>
+  	<ion-row>
+  		<ion-col>
+  			<ion-card >
+  				<ion-card-header color="primary">
+  					Welcome to my todo list
+  				</ion-card-header>
+  				<ion-card-content>
+  					
+  					User: kerul
+  				</ion-card-content>
+  			</ion-card>
+
+  			<ion-card >
+  				<ion-card-title>
+  					Laundry
+  				</ion-card-title>
+		  			<ion-card-subtitle>
+		  				<ion-list>
+  							<ion-item>
+  							Do laundry 9am
+  							</ion-item>
+  							<br>
+  							<ion-button color="secondary"
+  							expand="block">
+  							See details
+  							</ion-button>
+  						</ion-list>
+
+		  			</ion-card-subtitle>
+  				
+  			</ion-card>
+  		</ion-col>
+  	</ion-row>
+  </ion-grid>
+  <!-- Fixed Floating Action Button that does not scroll with the content -->
+
+  <ion-fab vertical="bottom" 
+    horizontal="center"
+    slot="fixed">
+    <ion-fab-button (click)="goToDetails()" color="danger" 
+    >
+    		<ion-icon name="add"></ion-icon>
+	</ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="header">
+  	<ion-buttons slot="start">
+  		<ion-back-button color="light">
+  		</ion-back-button>
+  	</ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="body">
+	<ion-card >
+		<ion-card-title>
+			Todo list
+		</ion-card-title>
+		<ion-card-content>
+			<ion-card-subtitle>
+				
+				<ion-item>
+					<ion-label position="stacked"> Title
+					</ion-label>
+					<ion-input type="text" placeholder="title">
+					</ion-input>
+					
+				</ion-item>
+				<ion-item>
+					<ion-label position="stacked"> Description
+					</ion-label>
+					<ion-textarea placeholder="description"
+					rows="6">
+					</ion-textarea>
+					
+				</ion-item>
+					<br>
+					
+				
+
+			</ion-card-subtitle>
+			<!-- buttons -->
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						<ion-button color="danger"
+  							expand="block">
+  							Delete
+  							</ion-button>
+					</ion-col>
+					<ion-col>
+						<ion-button color="success"
+  							expand="block">
+  							Save
+  							</ion-button>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+
+		</ion-card-content>
+		
+	</ion-card>
+
+
+</ion-content>
