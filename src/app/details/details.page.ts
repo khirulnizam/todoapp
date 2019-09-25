@@ -12,4 +12,8 @@ export class DetailsPage implements OnInit {
   ngOnInit() {
   }
 
+  save(){//function to save data
+  	alert("Am saving");
+  }
+
 }
