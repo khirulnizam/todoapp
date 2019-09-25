@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../service/common.service';
 
 @Component({
   selector: 'app-details',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
 
-  constructor() { }
+  constructor(private common: CommonService) { }
 
   ngOnInit() {
   }
 
   save(){//function to save data
-  	alert("Am saving");
+  	//alert("Am saving");
+  	this.common.presentAlert('Todo apps', 'Saving');
   }
 
 }

@@ -9,13 +9,15 @@ import { CommonService } from '../service/common.service';
 })
 export class HomePage {
 
-  constructor(private router: Router,) {
+  constructor(private router: Router, private common: CommonService,) {
 
   }
 
   goToDetails(){
   	//alert("Hi user");
+    this.common.presentAlert('Todo apps', 'Loading details');
   	this.router.navigate(['/details']);
+    //this.alert
   	//this.router
   }
 
