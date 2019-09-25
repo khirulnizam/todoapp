@@ -1,5 +1,5 @@
 //create manually this file to hold FIREBASE API KEY
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyCtZ5GwtKW_i1z7pAHYYsvDqL08DsfpZ5c",
   authDomain: "ionicfbase.firebaseapp.com",
   databaseURL: "https://ionicfbase.firebaseio.com",

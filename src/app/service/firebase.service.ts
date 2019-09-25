@@ -28,6 +28,5 @@ export class FirebaseService {
 	  		success: false
   		}
   	}//end catch
-
-  }
+  }//end create
 }
