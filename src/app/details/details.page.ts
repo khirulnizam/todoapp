@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../service/common.service';
+import { FirebaseService } from '../service/firebase.service';
 
 @Component({
   selector: 'app-details',
@@ -7,15 +8,27 @@ import { CommonService } from '../service/common.service';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+	details:{title:string, desc:string};
+	//detailId:any;
 
-  constructor(private common: CommonService) { }
+  constructor(private common: CommonService, 
+  	private fbase: FirebaseService) { }
 
   ngOnInit() {
+  	this.initValue();
+  }
+  initValue(){
+  	this.details={
+  		title:"",
+  		desc:""
+  	}
   }
 
-  save(){//function to save data
+  async save(){//function to save data
   	//alert("Am saving");
+  	//async to push to firebase
+  	await this.fbase.create(this.details);
   	this.common.presentAlert('Todo apps', 'Saving');
-  }
 
+  }
 }

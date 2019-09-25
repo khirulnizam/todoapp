@@ -19,7 +19,8 @@
 				<ion-item>
 					<ion-label position="stacked"> Title
 					</ion-label>
-					<ion-input type="text" placeholder="title">
+					<ion-input type="text" placeholder="title"
+					[(ngModel)]="details.title">
 					</ion-input>
 					
 				</ion-item>
@@ -27,6 +28,7 @@
 					<ion-label position="stacked"> Description
 					</ion-label>
 					<ion-textarea placeholder="description"
+					[(ngModel)]="details.desc"
 					rows="6">
 					</ion-textarea>
 					
