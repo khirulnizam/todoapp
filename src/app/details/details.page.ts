@@ -19,16 +19,17 @@ export class DetailsPage implements OnInit {
   }
   initValue(){
   	this.details={
-  		title:"",
-  		desc:""
+  		title: "",
+  		desc: ""
   	}
   }
 
   async save(){//function to save data
   	//alert("Am saving");
   	//async to push to firebase
-  	await this.fbase.create(this.details);
   	this.common.presentAlert('Todo apps', 'Saving');
+  	await this.fbase.create(this.details);
+  	
 
   }
 }

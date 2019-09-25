@@ -14,7 +14,7 @@ export class FirebaseService {
   //create record
   async create(details){
   	try{
-  		const receipt = await this.afstore.collection('details').add('details');
+  		const receipt = await this.afstore.collection('details').add(details);
   		//push data to firebase, if success
   		return {
   			value: receipt.id,
