@@ -72,7 +72,7 @@ export class FirebaseService {
   //UPDATE record
   async update(details, id){
   	try{
-  		delete details.id;
+  		//delete details.id;
   		const rec = await this.afstore.doc('details/'+id).set(details);
   		//push data to firebase, if success
   		return {

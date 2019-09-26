@@ -6,6 +6,24 @@ import { LoadingController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class CommonService {
+  detailId:any;
+  receipt:any;
+  //setter & getter 
+  getDetailId() {
+    return this.detailId;
+  }
+  setDetailId(detaildid){
+    //return 
+    this.detailId=detaildid;
+  }
+  //setter & getter 
+  getReceipt() {
+    return this.receipt;
+  }
+  setReceipt(receipt){
+    //return 
+    this.receipt=receipt;
+  }
 
   constructor(
   	private alertController: AlertController,
