@@ -29,4 +29,44 @@ export class FirebaseService {
   		}
   	}//end catch
   }//end create
+
+  //delete record
+  async delete(id){
+  	try{
+  		const rec = await this.afstore.doc('details/'+id).delete();
+  		//push data to firebase, if success
+  		return {
+  			value: rec,
+  			success: true
+  		}
+  	}//end try
+  	catch(err){
+  		//fail to delete data from firebase
+  		return{
+	  		value: err.message,
+	  		success: false
+  		}
+  	}//end catch
+
+  }//end delete
+
+  //update record
+  async update(details, id){
+  	try{
+  		delete details.id;
+  		const rec = await this.afstore.doc('details/'+id).set(details);
+  		//push data to firebase, if success
+  		return {
+  			value: rec,
+  			success: true
+  		}
+  	}//end try
+  	catch(err){
+  		//fail to delete data from firebase
+  		return{
+	  		value: err.message,
+	  		success: false
+  		}
+  	}//end catch
+  }//end update
 }
