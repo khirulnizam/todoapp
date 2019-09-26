@@ -9,7 +9,7 @@ import { FirebaseService } from '../service/firebase.service';
 })
 export class DetailsPage implements OnInit {
 	details:{title:string, desc:string};
-	//detailId:any;
+	detailId:any;
 
   constructor(private common: CommonService, 
   	private fbase: FirebaseService) { }
@@ -29,6 +29,15 @@ export class DetailsPage implements OnInit {
   	//async to push to firebase
   	this.common.presentAlert('Todo apps', 'Saving');
   	await this.fbase.create(this.details);
+  	
+
+  }
+
+  async remove(){//function to save data
+  	//alert("Am saving");
+  	//async to push to firebase
+  	this.common.presentAlert('Todo apps', 'Deleting');
+  	await this.fbase.delete(this.detailId);
   	
 
   }

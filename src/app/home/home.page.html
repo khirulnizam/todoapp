@@ -11,6 +11,13 @@
     
     
   </div>
+  <ion-fab vertical="bottom" 
+    horizontal="center"
+    slot="fixed">
+    <ion-fab-button (click)="goToDetails()" color="danger">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-grid>
   	<ion-row>
   		<ion-col>
@@ -48,12 +55,5 @@
   </ion-grid>
   <!-- Fixed Floating Action Button that does not scroll with the content -->
 
-  <ion-fab vertical="bottom" 
-    horizontal="center"
-    slot="fixed">
-    <ion-fab-button (click)="goToDetails()" color="danger" 
-    >
-    		<ion-icon name="add"></ion-icon>
-	</ion-fab-button>
-  </ion-fab>
+  
 </ion-content>

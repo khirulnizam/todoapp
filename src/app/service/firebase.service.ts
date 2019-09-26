@@ -11,6 +11,25 @@ export class FirebaseService {
   	private afstore: AngularFirestore,
   	) { }
 
+  //READ record
+  async read(){
+  	try{
+  		const receipt = await this.afstore.collection('details').snapshotChanges();
+  		//push data to firebase, if success
+  		return {
+  			value: receipt,
+  			success: true
+  		}
+  	}//end try
+  	catch(err){
+  		//fail to push data to firebase
+  		return{
+	  		value: err.message,
+	  		success: false
+  		}
+  	}//end catch
+  }//end READ
+
   //create record
   async create(details){
   	try{
