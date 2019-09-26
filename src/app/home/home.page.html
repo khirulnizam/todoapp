@@ -20,30 +20,35 @@
   </ion-fab>
   <ion-grid>
   	<ion-row>
-  		<ion-col>
-  			<ion-card >
-  				<ion-card-header color="primary">
-  					Welcome to my todo list
-  				</ion-card-header>
-  				<ion-card-content>
-  					
-  					User: kerul
-  				</ion-card-content>
-  			</ion-card>
+      <ion-col>
+        <ion-card >
+          <ion-card-header color="primary">
+            Welcome to my todo list
+          </ion-card-header>
+          <ion-card-content>
+            
+            User: kerul
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
 
+  		<ion-col *ngFor="let item of receipts">
   			<ion-card >
   				<ion-card-title>
-  					Laundry
+  					{{item.title}}
   				</ion-card-title>
 		  			<ion-card-subtitle>
 		  				<ion-list>
   							<ion-item>
-  							Do laundry 9am
+  							 {{item.desc}}
   							</ion-item>
   							<br>
   							<ion-button color="secondary"
-  							expand="block">
-  							See details
+  							expand="block"
+                (click)="toDetails(item)">
+  							   view details
   							</ion-button>
   						</ion-list>
 

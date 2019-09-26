@@ -30,7 +30,7 @@ export class FirebaseService {
   	}//end catch
   }//end READ
 
-  //create record
+  //CREATE record
   async create(details){
   	try{
   		const receipt = await this.afstore.collection('details').add(details);
@@ -49,7 +49,7 @@ export class FirebaseService {
   	}//end catch
   }//end create
 
-  //delete record
+  //DELETE record
   async delete(id){
   	try{
   		const rec = await this.afstore.doc('details/'+id).delete();
@@ -69,7 +69,7 @@ export class FirebaseService {
 
   }//end delete
 
-  //update record
+  //UPDATE record
   async update(details, id){
   	try{
   		delete details.id;
