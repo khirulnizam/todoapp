@@ -11,8 +11,6 @@ import { NavController } from '@ionic/angular';
 export class DetailsPage implements OnInit {
 	details:{title:string, desc:string};
 	detailId:any;
-	tag:any;
-	result:any;
 
   constructor(private common: CommonService, 
   	private fbase: FirebaseService,
@@ -20,13 +18,14 @@ export class DetailsPage implements OnInit {
 
   ngOnInit() {
   	this.initValue();
-  	if(!(this.detailId=='0') || this.detailId==0){
+  	if(!(this.detailId=='0' || this.detailId==0)){
   		//additional to divert with or without record selected
   		this.details=this.common.getReceipt();
   	}
   }
   initValue(){
   	this.detailId=this.common.getDetailId();
+    console.log(this.detailId);
   	this.details={
   		title: "",
   		desc: ""
@@ -48,7 +47,7 @@ export class DetailsPage implements OnInit {
   	loading.present();
   	switch (this.detailId){
   		case 0:
-  		case '0':
+  		case "0":
   			this.create(loading);
   			break;
   		default:
@@ -88,7 +87,28 @@ export class DetailsPage implements OnInit {
   		}
   }
 
-  async remove(){//function to save data
+  async delete(){
+    this.common.deleteConfirm(async ()=>{
+      let loading = await this.common.loading();
+      loading.present();
+      const update = await this.fbase.delete(this.detailId); 
+      if(update.success){
+        loading.dismiss();
+        this.common.presentAlert('Todo App','Details deleted');
+        this.navCtrl.back();
+      }else{
+        loading.dismiss();
+        this.common.presentAlert('Error',update.value);
+      }
+      loading.dismiss();
+    }, this.details.title);
+  }//end delete
+
+  //async deleteConfirm(async ,title){
+
+  //}
+
+  async remove(){//function to remove data
   	//alert("Am saving");
   	//async to push to firebase
   	this.common.presentAlert('Todo apps', 'Deleting');

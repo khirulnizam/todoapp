@@ -57,6 +57,7 @@ export class HomePage {
   	//alert("Hi user");
     //this.common.presentAlert('Todo apps', 'Loading details');
     this.common.setDetailId("0");
+    //this.common.setReceipt(null);
   	this.router.navigate(['/details']);
     //this.alert
   	//this.router

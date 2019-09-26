@@ -8,22 +8,6 @@ import { LoadingController } from '@ionic/angular';
 export class CommonService {
   detailId:any;
   receipt:any;
-  //setter & getter 
-  getDetailId() {
-    return this.detailId;
-  }
-  setDetailId(detaildid){
-    //return 
-    this.detailId=detaildid;
-  }
-  //setter & getter 
-  getReceipt() {
-    return this.receipt;
-  }
-  setReceipt(receipt){
-    //return 
-    this.receipt=receipt;
-  }
 
   constructor(
   	private alertController: AlertController,
@@ -43,5 +27,41 @@ export class CommonService {
   		message: 'loading...'
   	});
   	return loading;
+  }
+
+
+  //setter & getter 
+  getDetailId() {
+    return this.detailId;
+  }
+  setDetailId(detaildid){
+    //return 
+    this.detailId=detaildid;
+  }
+  //setter & getter 
+  getReceipt() {
+    return this.receipt;
+  }
+  setReceipt(receipt){
+    //return 
+    this.receipt=receipt;
+  }
+
+  async deleteConfirm(confirm, title){
+    const alert = await this.alertController.create({
+      header: 'Confirm?',
+      message: 'R u sure to delete?',
+      buttons: [{
+        text: 'Cancel',
+        role:'cancel',
+        cssClass: 'secondary'},
+        {
+          text: 'Delete',
+          handler:confirm
+        }
+      ]
+    });
+    await alert.present();
+
   }
 }
